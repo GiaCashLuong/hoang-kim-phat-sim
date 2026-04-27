@@ -188,7 +188,7 @@ if (contactForm) {
 const mapEl = document.getElementById('hkp-map');
 if (mapEl && typeof L !== 'undefined') {
   const LAT = 10.8882, LNG = 106.7556;
-  const map = L.map('hkp-map', { scrollWheelZoom: false, zoomControl: true });
+  const map = L.map('hkp-map', { scrollWheelZoom: true, zoomControl: true });
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
     attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'

@@ -289,6 +289,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .stat__num {
   display: block;
   font-family: var(--font-head);
+  font-variant-numeric: lining-nums tabular-nums;
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   font-weight: 700;
   color: var(--gold-light);
@@ -526,6 +527,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
   box-shadow: 0 8px 32px rgba(218,165,32,.25);
 }
 .nhamang__logo-circle svg { width: 88px; height: 52px; }
+.nhamang__logo-circle img { width: 80px; height: auto; object-fit: contain; }
 .nhamang__logo-name {
   font-size: .72rem; font-weight: 600; letter-spacing: .12em;
   text-transform: uppercase; color: var(--muted);
@@ -564,6 +566,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .sim-card__number {
   font-family: var(--font-head); font-size: 1.6rem; font-weight: 700;
   color: var(--cream); letter-spacing: .06em;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .sim-card__mang {
   font-size: .68rem; font-weight: 600;
@@ -659,6 +662,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .ctv__benefit-num {
   font-family: var(--font-head); font-size: 2.2rem; font-weight: 700;
   color: var(--gold-light); line-height: 1; margin-bottom: .3rem;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .ctv__benefit-label { font-size: .8rem; color: var(--muted); letter-spacing: .06em; }
 .ctv__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -763,13 +767,13 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .social-btn {
   width: 44px; height: 44px;
   border-radius: 10px;
-  background: var(--dark2);
-  border: 1px solid var(--border);
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-border);
   display: flex; align-items: center; justify-content: center;
-  color: var(--muted);
+  color: var(--gold);
   transition: background var(--trans), color var(--trans), border-color var(--trans), transform var(--trans);
 }
-.social-btn:hover { background: var(--crimson); color: var(--cream); border-color: var(--crimson-mid); transform: translateY(-2px); }
+.social-btn:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); transform: translateY(-2px); }
 .social-btn svg { width: 20px; height: 20px; }
 
 /* ===== CONTACT MAP ===== */
@@ -884,7 +888,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
   background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 1.5rem; display: flex; flex-direction: column; gap: .4rem;
 }
-.dash-stat__val { font-family: var(--font-head); font-size: 2rem; color: var(--gold-light); font-weight: 700; line-height: 1; }
+.dash-stat__val { font-family: var(--font-head); font-size: 2rem; color: var(--gold-light); font-weight: 700; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
 .dash-stat__label { font-size: .78rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
 .dash-stat__sub { font-size: .78rem; color: var(--muted2); }
 .dash-status {
