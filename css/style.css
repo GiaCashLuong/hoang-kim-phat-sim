@@ -288,7 +288,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 }
 .stat__num {
   display: block;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-variant-numeric: lining-nums tabular-nums;
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   font-weight: 700;
@@ -418,7 +418,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 }
 .batcuc__card--cat .batcuc__tag { background: var(--gold-pale); color: var(--gold); }
 .batcuc__card--hung .batcuc__tag { background: rgba(100,0,16,.4); color: #B86070; border: 1px solid rgba(160,30,50,.3); }
-.batcuc__desc { font-size: .84rem; color: var(--muted); line-height: 1.7; }
+.batcuc__desc { font-size: .86rem; color: var(--cream); line-height: 1.75; opacity: .85; }
 
 /* ===== NGU HANH ===== */
 .nguhanh__grid {
@@ -460,7 +460,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 }
 .nguhanh__en { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 .nguhanh__line { width: 32px; height: 1px; margin: 0 auto .75rem; }
-.nguhanh__sims { font-size: .8rem; color: var(--muted); line-height: 1.7; }
+.nguhanh__sims { font-size: .84rem; color: var(--cream); line-height: 1.75; opacity: .82; }
 /* Colors per element */
 .nguhanh--kim { --el: #B8B4BE; --el-bg: rgba(184,180,190,.1); }
 .nguhanh--thuy { --el: #4A9ECC; --el-bg: rgba(74,158,204,.1); }
@@ -676,13 +676,13 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .testi-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
   opacity: 0;
 }
 .testi-card.bento-in { animation: bentoIn .6s cubic-bezier(.25,.46,.45,.94) both; }
-.testi-card__stars { color: var(--gold); font-size: 1rem; letter-spacing: .1em; margin-bottom: 1rem; }
-.testi-card__text { font-size: .9rem; color: var(--muted); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; }
+.testi-card__stars { color: var(--gold); font-size: 1.1rem; letter-spacing: .12em; margin-bottom: 1.25rem; }
+.testi-card__text { font-size: 1.05rem; color: var(--cream); line-height: 1.9; font-style: italic; margin-bottom: 1.75rem; opacity: .9; }
 .testi-card__author { display: flex; align-items: center; gap: .75rem; }
 .testi-card__avatar {
   width: 42px; height: 42px; border-radius: 50%;
