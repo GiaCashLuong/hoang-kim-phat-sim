@@ -183,3 +183,30 @@ if (contactForm) {
     }
   });
 }
+
+/* ===== LEAFLET MAP ===== */
+const mapEl = document.getElementById('hkp-map');
+if (mapEl && typeof L !== 'undefined') {
+  const LAT = 10.8882, LNG = 106.7556;
+  const map = L.map('hkp-map', { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'
+  }).addTo(map);
+  const pinIcon = L.divIcon({
+    className: '',
+    html: '<span class="branch-pin"></span>',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12]
+  });
+  L.marker([LAT, LNG], { icon: pinIcon })
+    .addTo(map)
+    .bindPopup(`
+      <strong class="popup-name">Hoàng Kim Phát</strong>
+      <span class="popup-addr">Shophouse SH05, Bcons Garden, 25 Phạm Hữu Lầu, Dĩ An, Bình Dương</span>
+      <span class="popup-phone">0932.60.1616 · 0939.868.868</span>
+      <a class="popup-link" href="https://maps.google.com/?q=Bcons+Garden+Di+An+Binh+Duong" target="_blank" rel="noopener">Xem trên Google Maps →</a>
+    `, { maxWidth: 260, className: 'branch-popup' })
+    .openPopup();
+  map.setView([LAT, LNG], 15);
+}
