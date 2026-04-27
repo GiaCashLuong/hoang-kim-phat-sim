@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kho Sim Phong Thủy – Hoàng Kim Phát</title>
+  <meta name="description" content="Kho hơn 3 triệu sim phong thủy theo Kinh Dịch. Lọc theo mệnh, ngũ hành, nhà mạng và mức giá. Tư vấn miễn phí.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="nav" role="navigation" aria-label="Điều hướng chính">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="Hoàng Kim Phát - Trang chủ">
+      <img src="img/logo.png" alt="Logo Hoàng Kim Phát" width="42" height="42">
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">HOÀNG KIM PHÁT</span>
+        <span class="nav__logo-tagline">Sim Kinh Dịch</span>
+      </div>
+    </a>
+    <ul class="nav__links" id="nav-links" role="list">
+      <li><a href="index.html#bat-cuc" class="nav__link">Bát Cực Linh Số</a></li>
+      <li><a href="index.html#ngu-hanh" class="nav__link">Ngũ Hành</a></li>
+      <li><a href="sim.html" class="nav__link" style="color:var(--gold)">Kho Sim</a></li>
+      <li><a href="bat-cuc.html" class="nav__link">Tra Cứu</a></li>
+      <li><a href="index.html#contact" class="nav__link">Liên Hệ</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="auth.html" class="nav__cta">Đăng Nhập CTV</a>
+      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="sim-page">
+  <div class="sim-page__inner">
+
+    <div style="margin-bottom:2rem">
+      <span class="section-label">Danh sách</span>
+      <h1 class="section-title" style="text-align:left;margin-bottom:.5rem">Kho Sim <span>Phong Thủy</span></h1>
+      <p style="font-size:.9rem;color:var(--muted)">Lọc theo mệnh, ngũ hành, nhà mạng và khoảng giá phù hợp.</p>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="sim-filter" role="search" aria-label="Bộ lọc sim">
+      <div class="filter-group filter-search">
+        <label class="filter-label" for="filter-so">Tìm số</label>
+        <input class="filter-input" type="text" id="filter-so" name="filter-so" placeholder="Nhập số cần tìm (vd: 0944...)" autocomplete="off">
+      </div>
+      <div class="filter-group">
+        <label class="filter-label" for="filter-menh">Mệnh</label>
+        <select class="filter-select" id="filter-menh" name="filter-menh">
+          <option value="">Tất cả mệnh</option>
+          <option value="Thiên Y">Thiên Y</option>
+          <option value="Sinh Khí">Sinh Khí</option>
+          <option value="Diên Niên">Diên Niên</option>
+          <option value="Phục Vị">Phục Vị</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label" for="filter-hanh">Ngũ Hành</label>
+        <select class="filter-select" id="filter-hanh" name="filter-hanh">
+          <option value="">Tất cả</option>
+          <option value="Kim">Kim</option>
+          <option value="Thủy">Thủy</option>
+          <option value="Mộc">Mộc</option>
+          <option value="Hỏa">Hỏa</option>
+          <option value="Thổ">Thổ</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label" for="filter-mang">Nhà mạng</label>
+        <select class="filter-select" id="filter-mang" name="filter-mang">
+          <option value="">Tất cả</option>
+          <option value="Viettel">Viettel</option>
+          <option value="Mobifone">Mobifone</option>
+          <option value="Vinaphone">Vinaphone</option>
+          <option value="Vietnamobile">Vietnamobile</option>
+          <option value="Gmobile">Gmobile</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label" for="filter-gia">Khoảng giá</label>
+        <select class="filter-select" id="filter-gia" name="filter-gia">
+          <option value="">Tất cả</option>
+          <option value="0-1000000">Dưới 1 triệu</option>
+          <option value="1000000-3000000">1 – 3 triệu</option>
+          <option value="3000000-5000000">3 – 5 triệu</option>
+          <option value="5000000-99999999">Trên 5 triệu</option>
+        </select>
+      </div>
+      <button class="filter-clear" id="filter-clear" type="button">Xóa lọc</button>
+    </div>
+
+    <p class="sim-page__count" id="sim-count" aria-live="polite">Đang tải...</p>
+
+    <div class="sim-grid" id="sim-grid" aria-label="Danh sách sim">
+      <div class="loading"><div class="spinner" aria-hidden="true"></div> Đang tải kho sim...</div>
+    </div>
+
+    <div class="pagination" id="pagination" aria-label="Phân trang"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__logo">
+      <img src="img/logo.png" alt="Logo Hoàng Kim Phát" height="36">
+      <span class="footer__brand">HOÀNG KIM PHÁT</span>
+    </div>
+    <p class="footer__tagline">Kết nối nhân duyên – Khai mở phú quý</p>
+    <div class="footer__divider" aria-hidden="true"></div>
+    <p class="footer__copy">&copy; 2016–2026 Hoàng Kim Phát. Mọi quyền được bảo lưu.</p>
+  </div>
+</footer>
+
+<script src="js/supabase.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/page-sim.js"></script>
+</body>
+</html>

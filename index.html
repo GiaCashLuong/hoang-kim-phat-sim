@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoàng Kim Phát – Sim Kinh Dịch Phong Thủy Cao Cấp</title>
+  <meta name="description" content="Sim phong thủy theo Kinh Dịch – Bát Cực Linh Số. Kết nối nhân duyên, khai mở phú quý. Kho 3 triệu sim, tư vấn miễn phí, ship toàn quốc.">
+  <meta property="og:title" content="Hoàng Kim Phát – Sim Kinh Dịch">
+  <meta property="og:description" content="Sim phong thủy theo Kinh Dịch – Bát Cực Linh Số. Kết nối nhân duyên, khai mở phú quý.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav" role="navigation" aria-label="Điều hướng chính">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo" aria-label="Hoàng Kim Phát - Trang chủ">
+      <img src="img/logo.png" alt="Logo Hoàng Kim Phát" width="42" height="42">
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">HOÀNG KIM PHÁT</span>
+        <span class="nav__logo-tagline">Sim Kinh Dịch</span>
+      </div>
+    </a>
+    <ul class="nav__links" id="nav-links" role="list">
+      <li><a href="#bat-cuc" class="nav__link">Bát Cực Linh Số</a></li>
+      <li><a href="#ngu-hanh" class="nav__link">Ngũ Hành</a></li>
+      <li><a href="sim.html" class="nav__link">Kho Sim</a></li>
+      <li><a href="bat-cuc.html" class="nav__link">Tra Cứu</a></li>
+      <li><a href="#contact" class="nav__link">Liên Hệ</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="auth.html" class="nav__cta">Đăng Nhập CTV</a>
+      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero" aria-label="Hero">
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__content">
+    <img src="img/logo.png" alt="Logo Hoàng Kim Phát" class="hero__logo" width="110" height="110">
+    <h1 class="hero__brand">HOÀNG KIM PHÁT</h1>
+    <p class="hero__tagline">Kết nối nhân duyên – Khai mở phú quý</p>
+    <div class="hero__divider" aria-hidden="true"></div>
+    <p class="hero__desc">
+      Sim phong thủy theo trường phái <strong>Bát Cực Linh Số – Kinh Dịch</strong>.
+      Chọn số hợp mệnh, hút tài lộc, thăng tiến sự nghiệp và bình an gia đình.
+      Kho 3 triệu sim, tư vấn miễn phí, ship toàn quốc.
+    </p>
+    <div class="hero__actions">
+      <a href="sim.html" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Tìm Sim Theo Mệnh
+      </a>
+      <a href="auth.html" class="btn-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Đăng Ký CTV
+      </a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Khám phá</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Thống kê">
+  <div class="stats__grid" role="list">
+    <div role="listitem">
+      <span class="stat__num" data-to="50" data-suffix="K+">0K<span class="stat__plus">+</span></span>
+      <span class="stat__label">Khách được tư vấn</span>
+    </div>
+    <div role="listitem">
+      <span class="stat__num" data-to="968" data-suffix="K+">0K<span class="stat__plus">+</span></span>
+      <span class="stat__label">Lượt truy cập / năm</span>
+    </div>
+    <div role="listitem">
+      <span class="stat__num" data-to="3" data-suffix="M+">0M<span class="stat__plus">+</span></span>
+      <span class="stat__label">Kho sim phong thủy</span>
+    </div>
+    <div role="listitem">
+      <span class="stat__num" data-to="10" data-suffix="+">0<span class="stat__plus">+</span></span>
+      <span class="stat__label">Năm kinh nghiệm (từ 2016)</span>
+    </div>
+  </div>
+</section>
+
+<!-- GIOI THIEU -->
+<section class="section section--dark" id="gioi-thieu" aria-labelledby="about-title">
+  <div class="about__inner container">
+    <div class="about__img-wrap">
+      <img src="img/office.jpg" alt="Văn phòng Hoàng Kim Phát" class="about__img" loading="lazy">
+      <div class="about__badge">
+        <div class="about__badge-year">2016</div>
+        <div class="about__badge-text">Thành lập</div>
+      </div>
+    </div>
+    <div class="about__content">
+      <span class="section-label">Câu chuyện thương hiệu</span>
+      <h2 class="section-title" id="about-title">Tiên phong <span>Sim Kinh Dịch</span> tại Việt Nam</h2>
+      <p class="about__quote">"Số điện thoại không chỉ là công cụ liên lạc – đó là năng lượng bạn mang theo mỗi ngày."</p>
+      <p class="about__text">
+        Từ năm 2016, Hoàng Kim Phát đã tiên phong ứng dụng triết học <strong>Bát Cực Linh Số</strong> – một nhánh của Kinh Dịch – vào lĩnh vực tư vấn sim phong thủy. Hơn một thập kỷ nghiên cứu và phục vụ hàng chục nghìn khách hàng, chúng tôi tự hào là địa chỉ uy tín nhất trong giới dịch lý Kinh Dịch Việt Nam.
+      </p>
+      <div class="about__features">
+        <div class="about__feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Phân tích sâu theo 64 quẻ Kinh Dịch – không phải thần số học thông thường
+        </div>
+        <div class="about__feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Tư vấn cá nhân hóa theo tứ trụ – ngày giờ tháng năm sinh
+        </div>
+        <div class="about__feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Kho 3 triệu sim đa dạng từ 5 nhà mạng lớn
+        </div>
+        <div class="about__feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Đăng ký đúng tên – bảo hành trọn đời – hoàn tiền nếu sim lỗi
+        </div>
+      </div>
+      <a href="sim.html" class="btn-primary" style="margin-top:.5rem; width:fit-content">Xem Kho Sim</a>
+    </div>
+  </div>
+</section>
+
+<!-- BAT CUC LINH SO -->
+<section class="section section--dark2" id="bat-cuc" aria-labelledby="batcuc-title">
+  <div class="container">
+    <div class="section__header">
+      <span class="section-label">Phương pháp</span>
+      <h2 class="section-title" id="batcuc-title">Bát Cực <span>Linh Số</span></h2>
+      <p class="section-sub">Hệ thống phân tích năng lượng số điện thoại dựa trên 8 quái của Kinh Dịch – Hậu Thiên Bát Quái. Mỗi số điện thoại mang một tổ hợp năng lượng riêng, ảnh hưởng đến tài lộc, sức khỏe và các mối quan hệ của chủ nhân.</p>
+    </div>
+    <div class="batcuc__grid" id="batcuc-grid" aria-label="8 cung năng lượng">
+
+      <!-- 4 Cát -->
+      <article class="batcuc__card batcuc__card--cat" aria-label="Thiên Y">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3 class="batcuc__name">Thiên Y</h3>
+        <span class="batcuc__tag">Cát – Tốt lành</span>
+        <p class="batcuc__desc">Chủ về sức khỏe, tài lộc và hỗ trợ các mối quan hệ. Sim mang năng lượng Thiên Y giúp chủ nhân được quý nhân phù trợ, công việc hanh thông.</p>
+      </article>
+
+      <article class="batcuc__card batcuc__card--cat" aria-label="Sinh Khí">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="batcuc__name">Sinh Khí</h3>
+        <span class="batcuc__tag">Cát – Tốt lành</span>
+        <p class="batcuc__desc">Đại diện sức sống dồi dào, yên vui và quý nhân tương trợ. Thích hợp cho người kinh doanh, muốn mở rộng sự nghiệp và thu hút may mắn.</p>
+      </article>
+
+      <article class="batcuc__card batcuc__card--cat" aria-label="Diên Niên">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="batcuc__name">Diên Niên</h3>
+        <span class="batcuc__tag">Cát – Tốt lành</span>
+        <p class="batcuc__desc">Mang lại hòa hợp, ổn định sự nghiệp và gia đình. Phù hợp với những ai mong muốn sự bền vững lâu dài, thăng tiến từng bước chắc chắn.</p>
+      </article>
+
+      <article class="batcuc__card batcuc__card--cat" aria-label="Phục Vị">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="batcuc__name">Phục Vị</h3>
+        <span class="batcuc__tag">Cát – Tốt lành</span>
+        <p class="batcuc__desc">Biểu hiện bình yên, trấn tĩnh và cảm giác an toàn. Tốt cho những người cần sự ổn định tinh thần, tập trung học tập hoặc nghiên cứu.</p>
+      </article>
+
+      <!-- 4 Hung -->
+      <article class="batcuc__card batcuc__card--hung" aria-label="Họa Hại">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3 class="batcuc__name">Họa Hại</h3>
+        <span class="batcuc__tag">Hung – Không tốt</span>
+        <p class="batcuc__desc">Dễ dẫn đến cãi vã, thị phi và bệnh tật. Chủ nhân mang sim Họa Hại thường gặp trở ngại trong các mối quan hệ và sức khỏe.</p>
+      </article>
+
+      <article class="batcuc__card batcuc__card--hung" aria-label="Ngũ Quỷ">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3 class="batcuc__name">Ngũ Quỷ</h3>
+        <span class="batcuc__tag">Hung – Không tốt</span>
+        <p class="batcuc__desc">Biểu hiện sự không ổn định, biến động liên tục. Công việc hay bị gián đoạn, tài chính thất thường, khó tập trung lâu dài.</p>
+      </article>
+
+      <article class="batcuc__card batcuc__card--hung" aria-label="Lục Sát">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="batcuc__name">Lục Sát</h3>
+        <span class="batcuc__tag">Hung – Không tốt</span>
+        <p class="batcuc__desc">Gây khốn khổ tình cảm, dễ xảy ra mâu thuẫn trong gia đình và quan hệ đôi lứa. Nên tránh dùng sim có năng lượng Lục Sát.</p>
+      </article>
+
+      <article class="batcuc__card batcuc__card--hung" aria-label="Tuyệt Mệnh">
+        <div class="batcuc__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m9 18 3 3 3-3"/><path d="M12 12v9"/></svg>
+        </div>
+        <h3 class="batcuc__name">Tuyệt Mệnh</h3>
+        <span class="batcuc__tag">Hung – Cần tránh</span>
+        <p class="batcuc__desc">Thể hiện cực đoan, tai ương và mất mát. Đây là cung hung nhất – ảnh hưởng tiêu cực đến toàn bộ các mặt của cuộc sống chủ nhân.</p>
+      </article>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="bat-cuc.html" class="btn-outline">Tìm Hiểu Chi Tiết</a>
+    </div>
+  </div>
+</section>
+
+<!-- NGU HANH -->
+<section class="section section--dark" id="ngu-hanh" aria-labelledby="nguhanh-title">
+  <div class="container">
+    <div class="section__header">
+      <span class="section-label">Phân loại</span>
+      <h2 class="section-title" id="nguhanh-title">Sim theo <span>Ngũ Hành</span></h2>
+      <p class="section-sub">Mỗi người sinh ra đều thuộc một hành trong Ngũ Hành. Chọn sim hợp hành để tăng cường năng lượng tích cực, hỗ trợ sự nghiệp và cuộc sống.</p>
+    </div>
+    <div class="nguhanh__grid">
+      <div class="nguhanh__card nguhanh--kim">
+        <span class="nguhanh__symbol" aria-hidden="true">⚙</span>
+        <div class="nguhanh__name">Kim</div>
+        <div class="nguhanh__en">Metal</div>
+        <div class="nguhanh__line" aria-hidden="true"></div>
+        <p class="nguhanh__sims">Số cuối: 4, 9<br>Hướng: Tây, Tây Bắc<br>Màu: Trắng, Xám, Vàng<br>Thích hợp: Tài chính, Pháp lý</p>
+      </div>
+      <div class="nguhanh__card nguhanh--thuy">
+        <span class="nguhanh__symbol" aria-hidden="true">💧</span>
+        <div class="nguhanh__name">Thủy</div>
+        <div class="nguhanh__en">Water</div>
+        <div class="nguhanh__line" aria-hidden="true"></div>
+        <p class="nguhanh__sims">Số cuối: 1, 6<br>Hướng: Bắc<br>Màu: Đen, Xanh Navy<br>Thích hợp: Giao tiếp, Kinh doanh</p>
+      </div>
+      <div class="nguhanh__card nguhanh--moc">
+        <span class="nguhanh__symbol" aria-hidden="true">🌿</span>
+        <div class="nguhanh__name">Mộc</div>
+        <div class="nguhanh__en">Wood</div>
+        <div class="nguhanh__line" aria-hidden="true"></div>
+        <p class="nguhanh__sims">Số cuối: 3, 8<br>Hướng: Đông, Đông Nam<br>Màu: Xanh lá, Nâu<br>Thích hợp: Giáo dục, Sáng tạo</p>
+      </div>
+      <div class="nguhanh__card nguhanh--hoa">
+        <span class="nguhanh__symbol" aria-hidden="true">🔥</span>
+        <div class="nguhanh__name">Hỏa</div>
+        <div class="nguhanh__en">Fire</div>
+        <div class="nguhanh__line" aria-hidden="true"></div>
+        <p class="nguhanh__sims">Số cuối: 2, 7<br>Hướng: Nam<br>Màu: Đỏ, Cam, Tím<br>Thích hợp: Lãnh đạo, Sự nghiệp</p>
+      </div>
+      <div class="nguhanh__card nguhanh--tho">
+        <span class="nguhanh__symbol" aria-hidden="true">🏔</span>
+        <div class="nguhanh__name">Thổ</div>
+        <div class="nguhanh__en">Earth</div>
+        <div class="nguhanh__line" aria-hidden="true"></div>
+        <p class="nguhanh__sims">Số cuối: 0, 5<br>Hướng: Trung tâm, Tây Nam<br>Màu: Vàng đất, Nâu<br>Thích hợp: Bất động sản, Ổn định</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUC DICH -->
+<section class="section section--dark2" id="muc-dich" aria-labelledby="mucdich-title">
+  <div class="container">
+    <div class="section__header">
+      <span class="section-label">Chọn sim theo mục đích</span>
+      <h2 class="section-title" id="mucdich-title">Sim <span>Hợp Mục Đích</span></h2>
+      <p class="section-sub">Không chỉ hợp mệnh, số điện thoại còn cần phù hợp với mục tiêu cuộc sống của bạn.</p>
+    </div>
+    <div class="mucdich__grid" id="mucdich-grid">
+      <div class="mucdich__item">
+        <div class="mucdich__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="mucdich__name">Tài Lộc</div>
+        <p class="mucdich__desc">Thu hút tiền bạc, may mắn trong kinh doanh và đầu tư</p>
+      </div>
+      <div class="mucdich__item">
+        <div class="mucdich__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="mucdich__name">Công Danh</div>
+        <p class="mucdich__desc">Hỗ trợ thăng tiến, được cấp trên ghi nhận và trọng dụng</p>
+      </div>
+      <div class="mucdich__item">
+        <div class="mucdich__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="mucdich__name">Gia Đạo</div>
+        <p class="mucdich__desc">Gia đình hòa thuận, sum vầy, con cái ngoan hiền</p>
+      </div>
+      <div class="mucdich__item">
+        <div class="mucdich__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="mucdich__name">Tình Cảm</div>
+        <p class="mucdich__desc">Duyên số tốt, dễ gặp nhân duyên, tình cảm bền vững</p>
+      </div>
+      <div class="mucdich__item">
+        <div class="mucdich__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="mucdich__name">Học Vấn</div>
+        <p class="mucdich__desc">Tập trung, ghi nhớ tốt, thi cử hanh thông, học hành tiến bộ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NHA MANG -->
+<div class="nhamang" aria-label="Nhà mạng hỗ trợ">
+  <div class="nhamang__inner">
+    <div class="nhamang__label">
+      <span class="section-label">Nhà mạng hỗ trợ</span>
+    </div>
+    <div class="nhamang__badges" role="list">
+      <div class="nhamang__badge" role="listitem">
+        <span class="nhamang__badge-dot" style="background:#E53935" aria-hidden="true"></span>
+        Viettel
+      </div>
+      <div class="nhamang__badge" role="listitem">
+        <span class="nhamang__badge-dot" style="background:#42A5F5" aria-hidden="true"></span>
+        Mobifone
+      </div>
+      <div class="nhamang__badge" role="listitem">
+        <span class="nhamang__badge-dot" style="background:#66BB6A" aria-hidden="true"></span>
+        Vinaphone
+      </div>
+      <div class="nhamang__badge" role="listitem">
+        <span class="nhamang__badge-dot" style="background:#FFA726" aria-hidden="true"></span>
+        Vietnamobile
+      </div>
+      <div class="nhamang__badge" role="listitem">
+        <span class="nhamang__badge-dot" style="background:#AB47BC" aria-hidden="true"></span>
+        Gmobile
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIM PREVIEW -->
+<section class="section section--dark" id="sim-highlight" aria-labelledby="sim-prev-title">
+  <div class="container">
+    <div class="section__header">
+      <span class="section-label">Sim nổi bật</span>
+      <h2 class="section-title" id="sim-prev-title">Kho Sim <span>Phong Thủy</span></h2>
+      <p class="section-sub">Một số sim được khách hàng ưa chuộng nhất. Kho đầy đủ hơn 3 triệu số – lọc theo mệnh, nhà mạng và mục đích.</p>
+    </div>
+    <div class="sim-preview__grid" id="sim-preview-grid" aria-label="Danh sách sim nổi bật">
+      <!-- rendered by main.js -->
+    </div>
+    <div class="sim-preview__cta">
+      <a href="sim.html" class="btn-primary">
+        Xem Toàn Bộ Kho Sim
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CAM KET -->
+<section class="camket" id="cam-ket" aria-labelledby="camket-title">
+  <div class="camket__overlay" aria-hidden="true"></div>
+  <div class="camket__inner">
+    <span class="section-label">Cam kết của chúng tôi</span>
+    <h2 class="section-title" id="camket-title">Uy Tín – <span>Chất Lượng</span></h2>
+    <div class="camket__grid">
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="camket__title">Ship Miễn Phí 100%</div>
+        <p class="camket__desc">Giao sim tận nơi toàn quốc, miễn phí hoàn toàn. Nội thành giao trong ngày.</p>
+      </div>
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="camket__title">Đăng Ký Đúng Tên</div>
+        <p class="camket__desc">Hỗ trợ đăng ký theo đúng CCCD – đảm bảo quyền sở hữu hợp pháp.</p>
+      </div>
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="camket__title">Hoàn Tiền Nếu Lỗi</div>
+        <p class="camket__desc">Sim lỗi hoặc giao dịch thất bại do lỗi của chúng tôi – hoàn tiền 100%.</p>
+      </div>
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="camket__title">Bảo Mật Thông Tin</div>
+        <p class="camket__desc">Thông tin cá nhân tuyệt đối bảo mật, không chia sẻ với bên thứ ba.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTV SECTION -->
+<section class="ctv" id="ctv" aria-labelledby="ctv-title">
+  <div class="ctv__inner">
+    <span class="section-label">Chương trình cộng tác viên</span>
+    <h2 class="section-title" id="ctv-title">Trở Thành <span>CTV Hoàng Kim Phát</span></h2>
+    <p class="section-sub" style="max-width:580px;margin:0 auto 0">
+      Tiếp cận kho sim phong thủy đầy đủ nhất Việt Nam, nhận hoa hồng hấp dẫn cho mỗi đơn hàng thành công. Không cần kinh nghiệm – chỉ cần đam mê.
+    </p>
+    <div class="ctv__benefits">
+      <div class="ctv__benefit">
+        <div class="ctv__benefit-num">5%+</div>
+        <div class="ctv__benefit-label">Hoa hồng / đơn hàng</div>
+      </div>
+      <div class="ctv__benefit">
+        <div class="ctv__benefit-num">3M+</div>
+        <div class="ctv__benefit-label">Sim trong kho truy cập</div>
+      </div>
+      <div class="ctv__benefit">
+        <div class="ctv__benefit-num">24/7</div>
+        <div class="ctv__benefit-label">Dashboard theo dõi trực tiếp</div>
+      </div>
+    </div>
+    <div class="ctv__actions">
+      <a href="auth.html" class="btn-primary">Đăng Ký Ngay</a>
+      <a href="#contact" class="btn-outline">Tìm Hiểu Thêm</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials" aria-labelledby="testi-title">
+  <div class="container">
+    <div class="section__header">
+      <span class="section-label">Khách hàng nói gì</span>
+      <h2 class="section-title" id="testi-title">Phản Hồi <span>Thực Tế</span></h2>
+    </div>
+    <div class="testimonials__grid" id="testi-grid">
+      <article class="testi-card">
+        <div class="testi-card__stars" aria-label="5 sao">★★★★★</div>
+        <p class="testi-card__text">"Sau khi đổi sang sim Thiên Y theo tư vấn của Hoàng Kim Phát, công việc kinh doanh của tôi hanh thông hẳn. Quý nhân xuất hiện đúng lúc, hợp đồng ký liên tục. Rất cảm ơn!"</p>
+        <div class="testi-card__author">
+          <div class="testi-card__avatar" aria-hidden="true">T</div>
+          <div>
+            <div class="testi-card__name">Anh Tuấn</div>
+            <div class="testi-card__meta">Chủ doanh nghiệp – TP. HCM</div>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card">
+        <div class="testi-card__stars" aria-label="5 sao">★★★★★</div>
+        <p class="testi-card__text">"Tư vấn rất tận tình, giải thích rõ tại sao số cũ của mình lại không hợp. Sim mới Sinh Khí hợp mệnh Hỏa, cảm giác mọi thứ nhẹ nhàng hơn rất nhiều."</p>
+        <div class="testi-card__author">
+          <div class="testi-card__avatar" aria-hidden="true">L</div>
+          <div>
+            <div class="testi-card__name">Chị Lan Anh</div>
+            <div class="testi-card__meta">Giáo viên – Hà Nội</div>
+          </div>
+        </div>
+      </article>
+      <article class="testi-card">
+        <div class="testi-card__stars" aria-label="5 sao">★★★★★</div>
+        <p class="testi-card__text">"Giao sim nhanh, đóng gói cẩn thận. Quan trọng nhất là được hỗ trợ đăng ký đúng tên CCCD ngay luôn. Uy tín, sẽ giới thiệu bạn bè!"</p>
+        <div class="testi-card__author">
+          <div class="testi-card__avatar" aria-hidden="true">M</div>
+          <div>
+            <div class="testi-card__name">Anh Minh Khoa</div>
+            <div class="testi-card__meta">Kỹ sư – Đồng Nai</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact__inner">
+    <div class="contact__info">
+      <span class="section-label">Liên hệ</span>
+      <h2 class="section-title" id="contact-title">Tư Vấn <span>Miễn Phí</span></h2>
+      <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.8">Đội ngũ chuyên gia phong thủy Kinh Dịch sẵn sàng hỗ trợ bạn chọn sim hợp mệnh.</p>
+
+      <div class="contact__item">
+        <div class="contact__item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.87a16 16 0 0 0 5.58 5.58l1.77-1.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
+        </div>
+        <div>
+          <div class="contact__item-label">Hotline tư vấn</div>
+          <div class="contact__item-value">
+            <a href="tel:0932601616">0932.60.1616</a> &nbsp;|&nbsp; <a href="tel:0939868868">0939.868.868</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <div class="contact__item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact__item-label">Email</div>
+          <div class="contact__item-value"><a href="mailto:hotro.simkinhdich@gmail.com">hotro.simkinhdich@gmail.com</a></div>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <div class="contact__item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact__item-label">Địa chỉ</div>
+          <div class="contact__item-value">Shophouse SH05, chung cư Bcons Garden, TP. Hồ Chí Minh</div>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <div class="contact__item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="contact__item-label">Giờ làm việc</div>
+          <div class="contact__item-value">8:00 – 21:00, Thứ 2 – Chủ nhật</div>
+        </div>
+      </div>
+
+      <div class="contact__bank">
+        <div class="contact__bank-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Thanh toán chuyển khoản
+        </div>
+        <div class="bank-list">
+          <div class="bank-item">
+            <span class="bank-item__name">Techcombank</span>
+            <span class="bank-item__num">3786.797.979 – Lê Anh Đàn</span>
+          </div>
+          <div class="bank-item">
+            <span class="bank-item__name">MBBank</span>
+            <span class="bank-item__num">0100.1022.29999 – Lê Anh Đàn</span>
+          </div>
+          <div class="bank-item">
+            <span class="bank-item__name">Vietcombank</span>
+            <span class="bank-item__num">1151.956.868 – Sim Kinh Dịch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-family:var(--font-head);font-size:1.5rem;color:var(--cream);margin-bottom:1.5rem">Gửi Tin Nhắn</h3>
+      <form class="contact__form" id="contact-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="ho_ten">Họ và tên</label>
+          <input class="form-input" type="text" id="ho_ten" name="ho_ten" placeholder="Nguyễn Văn A" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="so_dien_thoai">Số điện thoại</label>
+          <input class="form-input" type="tel" id="so_dien_thoai" name="so_dien_thoai" placeholder="0932.60.1616" required autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="noi_dung">Nội dung</label>
+          <textarea class="form-textarea" id="noi_dung" name="noi_dung" placeholder="Tôi muốn tư vấn sim hợp mệnh Hỏa, ngân sách khoảng 2-3 triệu..." required></textarea>
+        </div>
+        <button class="form-submit" type="submit">Gửi Tin Nhắn</button>
+        <div class="form-alert" id="contact-alert" role="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__logo">
+      <img src="img/logo.png" alt="Logo Hoàng Kim Phát" height="36">
+      <span class="footer__brand">HOÀNG KIM PHÁT</span>
+    </div>
+    <p class="footer__tagline">Kết nối nhân duyên – Khai mở phú quý</p>
+    <div class="footer__divider" aria-hidden="true"></div>
+    <p class="footer__copy">&copy; 2016–2026 Hoàng Kim Phát. Sim Kinh Dịch – Bát Cực Linh Số. Mọi quyền được bảo lưu.</p>
+  </div>
+</footer>
+
+<script src="js/supabase.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

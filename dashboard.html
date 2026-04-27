@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard CTV – Hoàng Kim Phát</title>
+  <meta name="description" content="Dashboard cộng tác viên Hoàng Kim Phát – xem kho sim, theo dõi hoa hồng và link giới thiệu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav" role="navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="img/logo.png" alt="Logo Hoàng Kim Phát" width="42" height="42">
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">HOÀNG KIM PHÁT</span>
+        <span class="nav__logo-tagline">Cổng CTV</span>
+      </div>
+    </a>
+    <ul class="nav__links" id="nav-links" role="list">
+      <li><a href="sim.html" class="nav__link">Kho Sim</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__cta" id="btn-logout" type="button">Đăng Xuất</button>
+    </div>
+  </div>
+</nav>
+
+<main class="dashboard">
+  <div class="dashboard__inner">
+
+    <div class="dashboard__header" id="dash-header">
+      <div class="dashboard__greeting" id="dash-greeting">Chào mừng trở lại!</div>
+      <div class="dashboard__sub">Cổng cộng tác viên Hoàng Kim Phát</div>
+      <div class="dashboard__code" id="dash-code" title="Nhấn để copy link giới thiệu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Mã CTV: <span id="ctv-code">Đang tải...</span>
+        &nbsp;|&nbsp;
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Copy Link
+      </div>
+    </div>
+
+    <!-- STATUS NOTICE -->
+    <div id="pending-notice" class="pending-notice" style="display:none">
+      <h3>Tài khoản đang chờ duyệt</h3>
+      <p>Chúng tôi đang xem xét hồ sơ CTV của bạn. Thời gian xét duyệt 1–2 ngày làm việc. Bạn sẽ nhận email thông báo khi được kích hoạt.</p>
+      <p style="margin-top:.5rem;font-size:.82rem">Liên hệ hotline <strong>0932.60.1616</strong> nếu cần hỗ trợ gấp.</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="dash-stats" id="dash-stats">
+      <div class="dash-stat">
+        <div class="dash-stat__val" id="stat-hoa-hong">—</div>
+        <div class="dash-stat__label">Tổng hoa hồng</div>
+        <div class="dash-stat__sub">Tích lũy</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat__val" id="stat-don">—</div>
+        <div class="dash-stat__label">Đơn thành công</div>
+        <div class="dash-stat__sub">Tất cả thời gian</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat__val" id="stat-ty-le">5%</div>
+        <div class="dash-stat__label">Tỷ lệ hoa hồng</div>
+        <div class="dash-stat__sub" id="stat-status-badge">—</div>
+      </div>
+    </div>
+
+    <!-- KHO SIM -->
+    <div id="sim-section">
+      <div class="dash-sim-section__header">
+        <h2 class="dash-sim-section__title">Kho Sim Phong Thủy</h2>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+          <select class="filter-select" id="d-filter-hanh" aria-label="Lọc ngũ hành">
+            <option value="">Tất cả ngũ hành</option>
+            <option value="Kim">Kim</option>
+            <option value="Thủy">Thủy</option>
+            <option value="Mộc">Mộc</option>
+            <option value="Hỏa">Hỏa</option>
+            <option value="Thổ">Thổ</option>
+          </select>
+          <select class="filter-select" id="d-filter-mang" aria-label="Lọc nhà mạng">
+            <option value="">Tất cả nhà mạng</option>
+            <option value="Viettel">Viettel</option>
+            <option value="Mobifone">Mobifone</option>
+            <option value="Vinaphone">Vinaphone</option>
+            <option value="Vietnamobile">Vietnamobile</option>
+            <option value="Gmobile">Gmobile</option>
+          </select>
+          <input class="filter-input" type="text" id="d-filter-so" placeholder="Tìm số..." style="max-width:180px" aria-label="Tìm số sim">
+        </div>
+      </div>
+      <p class="sim-page__count" id="d-sim-count" aria-live="polite"></p>
+      <div class="sim-grid" id="d-sim-grid" aria-label="Kho sim CTV">
+        <div class="loading"><div class="spinner" aria-hidden="true"></div> Đang tải kho sim...</div>
+      </div>
+      <div class="pagination" id="d-pagination" aria-label="Phân trang"></div>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/supabase.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/page-dashboard.js"></script>
+</body>
+</html>
