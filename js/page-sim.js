@@ -1,3 +1,17 @@
+/* ===== AUTH GUARD ===== */
+(async () => {
+  const user = await requireAuth();
+  if (!user) return;
+  const { data: aff } = await window.db
+    .from('hkp_affiliates').select('trang_thai').eq('id', user.id).single();
+  if (!aff || aff.trang_thai !== 'active') {
+    document.getElementById('sim-section').style.display = 'none';
+    document.getElementById('pending-notice').style.display = '';
+    return;
+  }
+  loadSims();
+})();
+
 /* ===== NAV ===== */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
@@ -153,5 +167,3 @@ document.getElementById('filter-clear').addEventListener('click', () => {
   document.getElementById('filter-gia').value = '';
   applyFilter();
 });
-
-loadSims();
