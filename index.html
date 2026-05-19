@@ -13,8 +13,56 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- === Effects Library — curated by motion-director (test 2026-05-05) === -->
+  <!-- Load loading-choreography CSS FIRST (prevent flash before overlay paints) -->
+  <link rel="stylesheet" href="css/effects/loading-choreography.css">
+  <link rel="stylesheet" href="css/effects/magnetic-button.css">
+  <link rel="stylesheet" href="css/effects/split-text-reveal.css">
+  <link rel="stylesheet" href="css/effects/image-hover-suite.css">
+  <link rel="stylesheet" href="css/effects/card-tilt-3d.css">
+  <link rel="stylesheet" href="css/effects/smooth-scroll.css">
+  <link rel="stylesheet" href="css/effects/scroll-scrubbing.css">
+  <link rel="stylesheet" href="css/effects/particle-ambient.css">
+  <link rel="stylesheet" href="css/effects/custom-cursor-context-aware.css">
+
+  <!-- Vendor (self-hosted, GSAP 3.13.0 free post-Webflow + Lenis MIT) -->
+  <script defer src="js/vendor/gsap.min.js"></script>
+  <script defer src="js/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="js/vendor/SplitText.min.js"></script>
+  <script defer src="js/vendor/lenis.min.js"></script>
+
+  <!-- Tier detect FIRST, then effect scripts -->
+  <script defer src="js/effects/_tier-detect.js"></script>
+  <script defer src="js/effects/loading-choreography.js"></script>
+  <script defer src="js/effects/smooth-scroll.js"></script>
+  <script defer src="js/effects/magnetic-button.js"></script>
+  <script defer src="js/effects/split-text-reveal.js"></script>
+  <script defer src="js/effects/image-hover-suite.js"></script>
+  <script defer src="js/effects/card-tilt-3d.js"></script>
+  <script defer src="js/effects/scroll-scrubbing.js"></script>
+  <script defer src="js/effects/particle-ambient.js"></script>
+  <script defer src="js/effects/custom-cursor-context-aware.js"></script>
 </head>
 <body>
+
+<!-- === Loading Choreography overlay — Platinum tier === -->
+<div id="page-load-overlay" class="page-load-overlay" data-sweep-direction="up">
+  <div class="page-load-overlay__inner">
+    <img src="img/logo.png" class="page-load-overlay__logo" alt="">
+  </div>
+</div>
+
+<!-- === Particle Ambient — Platinum (gold particles drift cho heritage mood) === -->
+<canvas
+  data-particle-ambient
+  data-particle-count="40"
+  data-particle-color="218,165,32"
+  data-particle-speed="0.25"
+  data-particle-size-min="0.5"
+  data-particle-size-max="2.5"
+  data-particle-opacity="0.5"
+></canvas>
 
 <!-- NAV -->
 <nav class="nav" id="nav" role="navigation" aria-label="Điều hướng chính">
@@ -29,7 +77,6 @@
     <ul class="nav__links" id="nav-links" role="list">
       <li><a href="#bat-cuc" class="nav__link">Bát Cực Linh Số</a></li>
       <li><a href="#ngu-hanh" class="nav__link">Ngũ Hành</a></li>
-      <li><a href="sim.html" class="nav__link">Kho Sim</a></li>
       <li><a href="bat-cuc.html" class="nav__link">Tra Cứu</a></li>
       <li><a href="#contact" class="nav__link">Liên Hệ</a></li>
     </ul>
@@ -42,12 +89,12 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="hero" aria-label="Hero">
+<!-- HERO — wrapped với scroll-scrubbing Platinum (subtle zoom 1→1.1 as user scrolls past) -->
+<section class="hero" id="hero" aria-label="Hero" data-scrub data-scrub-effect="zoom" data-scrub-distance="80%" data-scrub-scale="1.12">
   <div class="hero__overlay" aria-hidden="true"></div>
-  <div class="hero__content">
+  <div class="hero__content scrub-target">
     <img src="img/logo.png" alt="Logo Hoàng Kim Phát" class="hero__logo" width="110" height="110">
-    <h1 class="hero__brand">HOÀNG KIM PHÁT</h1>
+    <h1 class="hero__brand" data-split data-split-direction="random" data-split-stagger="50">HOÀNG KIM PHÁT</h1>
     <p class="hero__tagline">Kết nối nhân duyên – Khai mở phú quý</p>
     <div class="hero__divider" aria-hidden="true"></div>
     <p class="hero__desc">
@@ -56,13 +103,13 @@
       Kho 3 triệu sim, tư vấn miễn phí, ship toàn quốc.
     </p>
     <div class="hero__actions">
-      <a href="sim.html" class="btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        Tìm Sim Theo Mệnh
-      </a>
-      <a href="auth.html" class="btn-outline">
+      <a href="#ctv" class="btn-primary" data-magnetic>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Đăng Ký CTV
+        Đăng Ký Làm CTV
+      </a>
+      <a href="auth.html" class="btn-outline" data-magnetic>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        Đăng Nhập CTV
       </a>
     </div>
   </div>
@@ -98,7 +145,7 @@
 <section class="section section--dark" id="gioi-thieu" aria-labelledby="about-title">
   <div class="about__inner container">
     <div class="about__img-wrap">
-      <img src="img/office.jpg" alt="Văn phòng Hoàng Kim Phát" class="about__img" loading="lazy">
+      <img src="img/office.jpg" alt="Văn phòng Hoàng Kim Phát" class="about__img img-lift" loading="lazy">
       <div class="about__badge">
         <div class="about__badge-year">2016</div>
         <div class="about__badge-text">Thành lập</div>
@@ -106,7 +153,7 @@
     </div>
     <div class="about__content">
       <span class="section-label">Câu chuyện thương hiệu</span>
-      <h2 class="section-title" id="about-title">Tiên phong <span>Sim Kinh Dịch</span> tại Việt Nam</h2>
+      <h2 class="section-title" data-split id="about-title">Tiên phong <span>Sim Kinh Dịch</span> tại Việt Nam</h2>
       <p class="about__quote">"Số điện thoại không chỉ là công cụ liên lạc – đó là năng lượng bạn mang theo mỗi ngày."</p>
       <p class="about__text">
         Từ năm 2016, Hoàng Kim Phát đã tiên phong ứng dụng triết học <strong>Bát Cực Linh Số</strong> – một nhánh của Kinh Dịch – vào lĩnh vực tư vấn sim phong thủy. Hơn một thập kỷ nghiên cứu và phục vụ hàng chục nghìn khách hàng, chúng tôi tự hào là địa chỉ uy tín nhất trong giới dịch lý Kinh Dịch Việt Nam.
@@ -129,7 +176,7 @@
           Đăng ký đúng tên – bảo hành trọn đời – hoàn tiền nếu sim lỗi
         </div>
       </div>
-      <a href="sim.html" class="btn-primary" style="margin-top:.5rem; width:fit-content">Xem Kho Sim</a>
+      <a href="#ctv" class="btn-primary" data-magnetic style="margin-top:.5rem; width:fit-content">Tìm Hiểu CTV</a>
     </div>
   </div>
 </section>
@@ -139,13 +186,13 @@
   <div class="container">
     <div class="section__header">
       <span class="section-label">Phương pháp</span>
-      <h2 class="section-title" id="batcuc-title">Bát Cực <span>Linh Số</span></h2>
+      <h2 class="section-title" data-split id="batcuc-title">Bát Cực <span>Linh Số</span></h2>
       <p class="section-sub">Hệ thống phân tích năng lượng số điện thoại dựa trên 8 quái của Kinh Dịch – Hậu Thiên Bát Quái. Mỗi số điện thoại mang một tổ hợp năng lượng riêng, ảnh hưởng đến tài lộc, sức khỏe và các mối quan hệ của chủ nhân.</p>
     </div>
     <div class="batcuc__grid" id="batcuc-grid" aria-label="8 cung năng lượng">
 
       <!-- 4 Cát -->
-      <article class="batcuc__card batcuc__card--cat" aria-label="Thiên Y">
+      <article class="batcuc__card batcuc__card--cat" data-tilt data-tilt-max="8" aria-label="Thiên Y">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
@@ -154,7 +201,7 @@
         <p class="batcuc__desc">Chủ về sức khỏe, tài lộc và hỗ trợ các mối quan hệ. Sim mang năng lượng Thiên Y giúp chủ nhân được quý nhân phù trợ, công việc hanh thông.</p>
       </article>
 
-      <article class="batcuc__card batcuc__card--cat" aria-label="Sinh Khí">
+      <article class="batcuc__card batcuc__card--cat" data-tilt data-tilt-max="8" aria-label="Sinh Khí">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
@@ -163,7 +210,7 @@
         <p class="batcuc__desc">Đại diện sức sống dồi dào, yên vui và quý nhân tương trợ. Thích hợp cho người kinh doanh, muốn mở rộng sự nghiệp và thu hút may mắn.</p>
       </article>
 
-      <article class="batcuc__card batcuc__card--cat" aria-label="Diên Niên">
+      <article class="batcuc__card batcuc__card--cat" data-tilt data-tilt-max="8" aria-label="Diên Niên">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
@@ -172,7 +219,7 @@
         <p class="batcuc__desc">Mang lại hòa hợp, ổn định sự nghiệp và gia đình. Phù hợp với những ai mong muốn sự bền vững lâu dài, thăng tiến từng bước chắc chắn.</p>
       </article>
 
-      <article class="batcuc__card batcuc__card--cat" aria-label="Phục Vị">
+      <article class="batcuc__card batcuc__card--cat" data-tilt data-tilt-max="8" aria-label="Phục Vị">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
@@ -182,7 +229,7 @@
       </article>
 
       <!-- 4 Hung -->
-      <article class="batcuc__card batcuc__card--hung" aria-label="Họa Hại">
+      <article class="batcuc__card batcuc__card--hung" data-tilt data-tilt-max="8" aria-label="Họa Hại">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
@@ -191,7 +238,7 @@
         <p class="batcuc__desc">Dễ dẫn đến cãi vã, thị phi và bệnh tật. Chủ nhân mang sim Họa Hại thường gặp trở ngại trong các mối quan hệ và sức khỏe.</p>
       </article>
 
-      <article class="batcuc__card batcuc__card--hung" aria-label="Ngũ Quỷ">
+      <article class="batcuc__card batcuc__card--hung" data-tilt data-tilt-max="8" aria-label="Ngũ Quỷ">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
@@ -200,7 +247,7 @@
         <p class="batcuc__desc">Biểu hiện sự không ổn định, biến động liên tục. Công việc hay bị gián đoạn, tài chính thất thường, khó tập trung lâu dài.</p>
       </article>
 
-      <article class="batcuc__card batcuc__card--hung" aria-label="Lục Sát">
+      <article class="batcuc__card batcuc__card--hung" data-tilt data-tilt-max="8" aria-label="Lục Sát">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
@@ -209,7 +256,7 @@
         <p class="batcuc__desc">Gây khốn khổ tình cảm, dễ xảy ra mâu thuẫn trong gia đình và quan hệ đôi lứa. Nên tránh dùng sim có năng lượng Lục Sát.</p>
       </article>
 
-      <article class="batcuc__card batcuc__card--hung" aria-label="Tuyệt Mệnh">
+      <article class="batcuc__card batcuc__card--hung" data-tilt data-tilt-max="8" aria-label="Tuyệt Mệnh">
         <div class="batcuc__icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m9 18 3 3 3-3"/><path d="M12 12v9"/></svg>
         </div>
@@ -220,7 +267,7 @@
 
     </div>
     <div style="text-align:center;margin-top:2.5rem">
-      <a href="bat-cuc.html" class="btn-outline">Tìm Hiểu Chi Tiết</a>
+      <a href="bat-cuc.html" class="btn-outline" data-magnetic>Tìm Hiểu Chi Tiết</a>
     </div>
   </div>
 </section>
@@ -230,7 +277,7 @@
   <div class="container">
     <div class="section__header">
       <span class="section-label">Phân loại</span>
-      <h2 class="section-title" id="nguhanh-title">Sim theo <span>Ngũ Hành</span></h2>
+      <h2 class="section-title" data-split id="nguhanh-title">Sim theo <span>Ngũ Hành</span></h2>
       <p class="section-sub">Mỗi người sinh ra đều thuộc một hành trong Ngũ Hành. Chọn sim hợp hành để tăng cường năng lượng tích cực, hỗ trợ sự nghiệp và cuộc sống.</p>
     </div>
     <div class="nguhanh__grid">
@@ -300,7 +347,7 @@
   <div class="container">
     <div class="section__header">
       <span class="section-label">Chọn sim theo mục đích</span>
-      <h2 class="section-title" id="mucdich-title">Sim <span>Hợp Mục Đích</span></h2>
+      <h2 class="section-title" data-split id="mucdich-title">Sim <span>Hợp Mục Đích</span></h2>
       <p class="section-sub">Không chỉ hợp mệnh, số điện thoại còn cần phù hợp với mục tiêu cuộc sống của bạn.</p>
     </div>
     <div class="mucdich__grid" id="mucdich-grid">
@@ -390,32 +437,13 @@
   </div>
 </div>
 
-<!-- SIM PREVIEW -->
-<section class="section section--dark" id="sim-highlight" aria-labelledby="sim-prev-title">
-  <div class="container">
-    <div class="section__header">
-      <span class="section-label">Sim nổi bật</span>
-      <h2 class="section-title" id="sim-prev-title">Kho Sim <span>Phong Thủy</span></h2>
-      <p class="section-sub">Một số sim được khách hàng ưa chuộng nhất. Kho đầy đủ hơn 3 triệu số – lọc theo mệnh, nhà mạng và mục đích.</p>
-    </div>
-    <div class="sim-preview__grid" id="sim-preview-grid" aria-label="Danh sách sim nổi bật">
-      <!-- rendered by main.js -->
-    </div>
-    <div class="sim-preview__cta">
-      <a href="sim.html" class="btn-primary">
-        Xem Toàn Bộ Kho Sim
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- CAM KET -->
 <section class="camket" id="cam-ket" aria-labelledby="camket-title">
   <div class="camket__overlay" aria-hidden="true"></div>
   <div class="camket__inner">
     <span class="section-label">Cam kết của chúng tôi</span>
-    <h2 class="section-title" id="camket-title">Uy Tín – <span>Chất Lượng</span></h2>
+    <h2 class="section-title" data-split id="camket-title">Uy Tín – <span>Chất Lượng</span></h2>
     <div class="camket__grid">
       <div class="camket__item">
         <div class="camket__icon">
@@ -451,29 +479,60 @@
 
 <!-- CTV SECTION -->
 <section class="ctv" id="ctv" aria-labelledby="ctv-title">
-  <div class="ctv__inner">
+  <div class="ctv__inner" style="max-width:900px">
     <span class="section-label">Chương trình cộng tác viên</span>
-    <h2 class="section-title" id="ctv-title">Trở Thành <span>CTV Hoàng Kim Phát</span></h2>
-    <p class="section-sub" style="max-width:580px;margin:0 auto 0">
-      Tiếp cận kho sim phong thủy đầy đủ nhất Việt Nam, nhận hoa hồng hấp dẫn cho mỗi đơn hàng thành công. Không cần kinh nghiệm – chỉ cần đam mê.
+    <h2 class="section-title" data-split id="ctv-title">Đăng Ký <span>Làm CTV</span></h2>
+    <p class="section-sub" style="max-width:600px;margin:0 auto 2rem">
+      Tham gia mạng lưới — được đào tạo bài bản, nhận tài liệu &amp; quà tặng, nhập sim giá gốc và kiếm hoa hồng đa tầng. Không cần kinh nghiệm, chỉ cần đam mê.
     </p>
-    <div class="ctv__benefits">
-      <div class="ctv__benefit">
-        <div class="ctv__benefit-num">5%+</div>
-        <div class="ctv__benefit-label">Hoa hồng / đơn hàng</div>
+
+    <div style="display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);padding:.6rem 1.5rem;border-radius:2rem;margin-bottom:3rem">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--gold)"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      <span style="color:var(--gold);font-size:.9rem;font-weight:600;letter-spacing:.03em">Có phí tham gia — Liên hệ để biết chi tiết</span>
+    </div>
+
+    <div class="camket__grid" style="margin-bottom:2.5rem">
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="camket__title">Đào Tạo Miễn Phí</div>
+        <p class="camket__desc">Được đào tạo từ A–Z về Bát Cực Linh Số và kỹ năng tư vấn, kể cả khi chưa có kinh nghiệm.</p>
       </div>
-      <div class="ctv__benefit">
-        <div class="ctv__benefit-num">3M+</div>
-        <div class="ctv__benefit-label">Sim trong kho truy cập</div>
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+        </div>
+        <div class="camket__title">Tài Liệu &amp; Quà Tặng</div>
+        <p class="camket__desc">Nhận trọn bộ tài liệu nghiệp vụ và quà tặng chào mừng khi gia nhập chính thức vào mạng lưới.</p>
       </div>
-      <div class="ctv__benefit">
-        <div class="ctv__benefit-num">24/7</div>
-        <div class="ctv__benefit-label">Dashboard theo dõi trực tiếp</div>
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </div>
+        <div class="camket__title">Nhập Sim Giá Gốc</div>
+        <p class="camket__desc">Được quyền nhập sim trực tiếp với giá gốc, không qua trung gian — tối ưu biên lợi nhuận khi bán ra.</p>
+      </div>
+      <div class="camket__item">
+        <div class="camket__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="camket__title">Hoa Hồng Giới Thiệu</div>
+        <p class="camket__desc">Kiếm thêm thu nhập mỗi khi giới thiệu thành công một CTV mới tham gia vào mạng lưới.</p>
       </div>
     </div>
+
+    <div style="background:var(--card);border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:1.5rem 2rem;max-width:640px;margin:0 auto 2.5rem;display:flex;gap:1rem;align-items:flex-start;text-align:left">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--gold);flex-shrink:0;margin-top:.1rem"><polyline points="20 6 9 17 4 12"/></svg>
+      <div>
+        <p style="color:var(--cream);font-weight:600;margin-bottom:.4rem">Đủ năng lực tư vấn khách hàng</p>
+        <p style="color:var(--muted);font-size:.88rem;line-height:1.75">Sau khi hoàn thành đào tạo, bạn nắm vững kiến thức Kinh Dịch – Bát Cực Linh Số để tự tin tư vấn chọn sim phong thủy hợp mệnh cho bất kỳ khách hàng nào.</p>
+      </div>
+    </div>
+
     <div class="ctv__actions">
-      <a href="auth.html" class="btn-primary">Đăng Ký Ngay</a>
-      <a href="#contact" class="btn-outline">Tìm Hiểu Thêm</a>
+      <a href="#contact" class="btn-primary" data-magnetic>Đăng Ký Ngay</a>
+      <a href="auth.html" class="btn-outline" data-magnetic>Đã Có Tài Khoản CTV</a>
     </div>
   </div>
 </section>
@@ -483,7 +542,7 @@
   <div class="container">
     <div class="section__header">
       <span class="section-label">Khách hàng nói gì</span>
-      <h2 class="section-title" id="testi-title">Phản Hồi <span>Thực Tế</span></h2>
+      <h2 class="section-title" data-split id="testi-title">Phản Hồi <span>Thực Tế</span></h2>
     </div>
     <div class="testimonials__grid" id="testi-grid">
       <article class="testi-card">
@@ -528,7 +587,7 @@
   <div class="contact__inner">
     <div class="contact__info">
       <span class="section-label">Liên hệ</span>
-      <h2 class="section-title" id="contact-title">Tư Vấn <span>Miễn Phí</span></h2>
+      <h2 class="section-title" data-split id="contact-title">Tư Vấn <span>Miễn Phí</span></h2>
       <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.8">Đội ngũ chuyên gia phong thủy Kinh Dịch sẵn sàng hỗ trợ bạn chọn sim hợp mệnh.</p>
 
       <div class="contact__item">

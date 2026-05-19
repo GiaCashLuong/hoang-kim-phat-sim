@@ -1,0 +1,81 @@
+/* === Loading Choreography — overlay reveal === */
+
+.page-load-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--dark, #0D0608);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1);
+  will-change: transform;
+}
+
+.page-load-overlay__inner {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-load-overlay__logo {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 0 24px rgba(218, 165, 32, 0.3));
+}
+
+/* Active state — applied by JS shortly after page load */
+.page-load-overlay.is-active .page-load-overlay__inner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Sweep directions */
+.page-load-overlay.sweep-up { transform: translateY(0); }
+.page-load-overlay.sweep-up.is-leaving { transform: translateY(-100%); }
+
+.page-load-overlay.sweep-down { transform: translateY(0); }
+.page-load-overlay.sweep-down.is-leaving { transform: translateY(100%); }
+
+.page-load-overlay.sweep-diagonal-tl-br { transform: translate(0, 0); }
+.page-load-overlay.sweep-diagonal-tl-br.is-leaving {
+  transform: translate(-100%, -100%);
+  border-radius: 0 0 0 100%;
+}
+
+.page-load-overlay.sweep-diagonal-tr-bl { transform: translate(0, 0); }
+.page-load-overlay.sweep-diagonal-tr-bl.is-leaving {
+  transform: translate(100%, -100%);
+  border-radius: 0 0 100% 0;
+}
+
+/* Page content fades in after overlay leaves */
+body.page-loading > *:not(.page-load-overlay) {
+  opacity: 0;
+}
+body.page-loaded > *:not(.page-load-overlay) {
+  opacity: 1;
+  transition: opacity 0.6s ease 0.3s; /* delay slightly to sync with sweep */
+}
+
+/* Reduced motion — skip choreography entirely */
+@media (prefers-reduced-motion: reduce) {
+  .page-load-overlay {
+    display: none !important;
+  }
+  body.page-loading > * {
+    opacity: 1 !important;
+  }
+}
+
+/* Mobile shorter variant — fade only, no sweep */
+@media (max-width: 767px) {
+  .page-load-overlay {
+    transition: opacity 0.5s ease;
+    transform: none !important;
+  }
+  .page-load-overlay.is-leaving {
+    opacity: 0;
+  }
+}

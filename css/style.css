@@ -160,8 +160,14 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .hero::before {
   content: '';
   position: absolute; inset: -8%;
-  background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80');
-  background-size: cover; background-position: center;
+  background-image: url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center 75%;
+  background-repeat: no-repeat;
+  /* Mode B subtle: ảnh chìm chứ không làm nền — barely-there texture */
+  mix-blend-mode: lighten;
+  opacity: 0.14;
+  filter: grayscale(50%) brightness(0.85) contrast(0.95) sepia(25%) blur(1px);
   animation: kenBurns 24s ease-in-out infinite alternate;
   z-index: 0;
 }
@@ -613,7 +619,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .camket {
   position: relative; padding: 7rem 1.5rem;
   background-attachment: fixed;
-  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80');
+  background-image: url('../img/bg-nguhanh.jpg');
   background-size: cover; background-position: center;
 }
 .camket__overlay {
@@ -1049,3 +1055,56 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 }
 .pending-notice h3 { color: #FFA726; font-family: var(--font-head); font-size: 1.25rem; margin-bottom: .5rem; }
 .pending-notice p { font-size: .88rem; color: var(--muted); }
+
+/* ============================================ */
+/* === MODE B ATMOSPHERIC — ZONE STRATEGY === */
+/* Curated by image-curator agent 2026-05-05 v3 */
+/* Principle: ONE ảnh chìm xuyên suốt cả mảng */
+/* dark sections (background-attachment:fixed),  */
+/* KHÔNG spam 1 ảnh per section.                */
+/* ============================================ */
+
+/* Dark zone wrapper — all dark sections share ONE atmospheric image */
+.section--dark,
+.section--dark2 {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  /* Walters Museum ink wash mountain — fixed attachment so image stays put */
+  /* User scrolls through multiple dark sections seeing the SAME atmospheric texture */
+  background-color: var(--dark);
+  background-image: url('../img/bg-nguhanh.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Subtle texture layer + heavy darkening overlay */
+.section--dark::before,
+.section--dark2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Heavy darkening overlay so image whispers, không assertive */
+  background: linear-gradient(
+    to bottom,
+    rgba(13,6,8,0.93) 0%,
+    rgba(13,6,8,0.88) 50%,
+    rgba(13,6,8,0.92) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section--dark > .container,
+.section--dark2 > .container,
+.section--dark > .about__inner,
+.section--dark2 > .about__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Slight brightness/desat on raw image via filter on parent — apply to body level if needed */
+/* For now the heavy overlay above does the heavy lifting */
+

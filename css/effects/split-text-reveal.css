@@ -1,0 +1,62 @@
+/* === Split-Text Reveal — Gold tier with Mid/Bronze fallback === */
+
+/* Default state — text invisible until JS reveals (or :no-js fallback) */
+[data-split] {
+  visibility: hidden;
+  /* Reserve space — no CLS */
+}
+
+/* JS sets this once SplitText prepared */
+[data-split].split-ready {
+  visibility: visible;
+}
+
+/* Per-character mode (Gold tier — high device) */
+/* Word wrapper preserves word boundaries — chars inside split per char */
+[data-split].split-by-char .word {
+  display: inline-block;
+  white-space: nowrap;
+}
+[data-split].split-by-char .char {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Per-word mode (Silver tier — mid device) */
+[data-split].split-by-word .word {
+  display: inline-block;
+  transform: translateY(60%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Bronze fallback — when JS detects low-end OR vendor missing */
+[data-split].split-bronze {
+  visibility: visible;
+  animation: splitBronzeFadeIn 0.4s ease-out both;
+}
+@keyframes splitBronzeFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Reduced motion — instant visibility, no animation */
+@media (prefers-reduced-motion: reduce) {
+  [data-split] {
+    visibility: visible !important;
+    animation: none !important;
+  }
+  [data-split] .char,
+  [data-split] .word {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Optional accent color on a marked range */
+[data-split] .gold-accent {
+  color: var(--gold, #DAA520);
+  font-style: italic;
+}

@@ -1,0 +1,101 @@
+/* === Custom Cursor Context-Aware === */
+
+.custom-cursor {
+  --cursor-color: var(--gold, #DAA520);
+  --cursor-size: 24px;
+  --cursor-image-size: 80px;
+  --cursor-blend: difference;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  pointer-events: none;
+  z-index: 99998; /* above everything except loading-choreography overlay */
+  mix-blend-mode: var(--cursor-blend);
+  transform: translate3d(-100px, -100px, 0); /* hide off-screen until first move */
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+.custom-cursor__inner {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--cursor-color);
+  border-radius: 50%;
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              height 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--cursor-color);
+  text-transform: uppercase;
+}
+
+/* === Context: over link / button / magnetic === */
+.custom-cursor.is-link .custom-cursor__inner {
+  background: var(--cursor-color);
+  transform: scale(0.4);
+}
+
+/* === Context: over image — enlarge with optional label === */
+.custom-cursor.is-image {
+  width: var(--cursor-image-size);
+  height: var(--cursor-image-size);
+  transform: translate3d(var(--cx, 0), var(--cy, 0), 0);
+}
+.custom-cursor.is-image .custom-cursor__inner {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+
+/* === Context: text input — hide custom cursor === */
+.custom-cursor.is-text {
+  opacity: 0;
+}
+
+/* === Hide native cursor when custom active === */
+@media (hover: hover) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [data-magnetic],
+  body.has-custom-cursor img,
+  body.has-custom-cursor picture {
+    cursor: none;
+  }
+  /* Restore native cursor on inputs (need text caret) */
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor [contenteditable] {
+    cursor: text;
+  }
+}
+
+/* === Touch devices — never show === */
+@media (hover: none) {
+  .custom-cursor {
+    display: none !important;
+  }
+  body.has-custom-cursor {
+    cursor: auto !important;
+  }
+}
+
+/* === Reduced motion — disable smooth lerp via JS, but keep visual === */
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    transition: none !important;
+  }
+  .custom-cursor__inner {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+}

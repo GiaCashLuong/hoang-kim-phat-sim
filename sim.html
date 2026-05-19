@@ -40,6 +40,14 @@
 <main class="sim-page">
   <div class="sim-page__inner">
 
+    <!-- Hiển thị khi CTV chưa được duyệt -->
+    <div id="pending-notice" style="display:none;text-align:center;padding:4rem 1rem">
+      <p style="font-size:1.1rem;color:var(--muted);margin-bottom:1rem">Tài khoản của bạn đang chờ duyệt.<br>Vui lòng chờ 1–2 ngày làm việc để được kích hoạt.</p>
+      <a href="dashboard.html" class="btn-primary">Về Dashboard</a>
+    </div>
+
+    <div id="sim-section">
+
     <div style="margin-bottom:2rem">
       <span class="section-label">Danh sách</span>
       <h1 class="section-title" style="text-align:left;margin-bottom:.5rem">Kho Sim <span>Phong Thủy</span></h1>
@@ -104,6 +112,7 @@
     </div>
 
     <div class="pagination" id="pagination" aria-label="Phân trang"></div>
+  </div><!-- /sim-section -->
   </div>
 </main>
 

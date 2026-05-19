@@ -1,0 +1,36 @@
+/* === Scroll Scrubbing — minimal CSS, JS sets transforms === */
+
+[data-scrub] {
+  position: relative;
+  /* Pin behavior added by ScrollTrigger */
+}
+
+.scrub-target {
+  position: relative;
+  will-change: transform, opacity;
+  transform-origin: center;
+}
+
+/* Zoom effect target */
+.scrub-target.scrub-effect-zoom {
+  transform-origin: center;
+}
+
+/* Stages — for fade/text reveal */
+.scrub-target [data-scrub-stage] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.scrub-target [data-scrub-stage].stage-active {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced motion — show all content statically */
+@media (prefers-reduced-motion: reduce) {
+  .scrub-target,
+  .scrub-target [data-scrub-stage] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

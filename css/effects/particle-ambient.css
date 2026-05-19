@@ -1,0 +1,19 @@
+/* === Particle Ambient — canvas overlay === */
+
+[data-particle-ambient] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* behind content (z-index 2+), above page bg */
+  display: block;
+}
+
+/* Reduced motion or low device — JS removes canvas, this is fallback if JS fails */
+@media (prefers-reduced-motion: reduce) {
+  [data-particle-ambient] {
+    display: none !important;
+  }
+}

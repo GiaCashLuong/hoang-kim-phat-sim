@@ -1,0 +1,47 @@
+/* === Magnetic Button — Gold tier with Silver/Bronze fallback === */
+/* Self-contained: include this file via <link> OR paste into main stylesheet */
+
+/* Base — works for ALL tiers, button stays functional even if JS fails */
+[data-magnetic] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Smooth spring-back when JS resets transform */
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+/* Bronze fallback — applied via :hover when JS detects low-end OR vendor missing */
+[data-magnetic].is-bronze:hover,
+[data-magnetic]:not(.is-magnetic-active):not(.is-tap-active):hover {
+  transform: scale(1.02);
+}
+
+/* Silver fallback — tap-scale on touch devices */
+[data-magnetic].is-tap-active {
+  transform: scale(0.96);
+  transition: transform 0.15s ease-out;
+}
+
+/* Gold tier — JS controls inline transform during pointermove
+   (No CSS rule needed — JS sets style.transform directly) */
+
+/* Reduced motion — disable all magnetic / tap-scale, allow simple hover only */
+@media (prefers-reduced-motion: reduce) {
+  [data-magnetic] {
+    transition: none !important;
+  }
+  [data-magnetic].is-magnetic-active,
+  [data-magnetic].is-tap-active {
+    transform: none !important;
+  }
+}
+
+/* Mobile-low device class (set by JS based on deviceMemory check) */
+.device-low [data-magnetic] {
+  transition: transform 0.25s ease;
+}
+.device-low [data-magnetic]:hover {
+  transform: scale(1.02);
+}
