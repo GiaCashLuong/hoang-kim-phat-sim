@@ -58,5 +58,4 @@
 /* Optional accent color on a marked range */
 [data-split] .gold-accent {
   color: var(--gold, #DAA520);
-  font-style: italic;
 }
